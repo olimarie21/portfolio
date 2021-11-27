@@ -1,0 +1,35 @@
+// **********************************//
+// *********Color Variables**********//
+// **********************************//
+
+$black: #101010;
+$dark-grey: #1f1f1f;
+$white: #f8f4f1;
+
+$purple: #8b80f9;
+$blue: #5cc1bc;
+
+
+// **********************************//
+// **********Font Variables**********//
+// **********************************//
+
+$font:'Outfit', sans-serif;
+
+$h1: bold 900 24px $font;
+$h2: bold 700 18px $font;
+$h3: bold 700 15px $font;
+$h4: "";
+
+
+$body: "";
+
+h1 {
+    font: $h1;
+}
+
+h2 {
+    font: $h2;
+    color: $purple;
+    text-transform: uppercase;
+}

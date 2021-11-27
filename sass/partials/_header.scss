@@ -1,0 +1,133 @@
+.site-header {
+    background: $dark-grey;
+    color: $white;
+    padding-bottom: 36px;
+    clip-path: polygon(0 0, 100% 0, 100% 76%, 0 99%);
+
+    .header-container {
+        clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%);
+        background: $black;
+        padding: 36px;
+        justify-content: space-between;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+
+        form#searchform.searchform {
+            display: none;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            padding-top: 36px;
+            font-size: 24pt;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 900;
+            background-image: linear-gradient(to right, $blue, $purple);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin: 0;
+            overflow: hidden;
+    
+            background-size: 200% auto;
+            animation: gradient 4s ease-in-out infinite alternate;
+    
+            backface-visibility: hidden;
+            max-width: 328px;
+            grid-column: 1/ 1;
+            grid-row: 1 / 1;
+
+            a:visited, a:active {
+                background-image: linear-gradient(to right, $blue, $purple);
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: $blue;
+            }
+        }
+
+        h4 {
+            padding-top: 0;
+            margin-top: 0;
+            padding-bottom: 8px;
+            grid-column: 1/ 1;
+            max-width: 170px;
+            grid-row: 2 / 2;
+            font-weight: 400;
+        }
+    }
+}
+
+// *******************Mobile Navigation Pop-Up Styles*******************//
+.mobile-nav-container .mobile-nav {
+    text-decoration: none;
+    color: $white;
+    font-size: 24px;
+    display: inline-block;
+}
+
+.mobile-nav-container {
+    grid-column: 2 / 2;
+}
+
+.primary-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+
+    @media screen and (min-width: 700px) {
+        width: 40%;
+    }
+
+    background: #1f1f1f;
+    z-index: 10000;
+    box-shadow: -1px 0px 2px 1px $black;
+    overflow: hidden;
+
+    .close-menu {
+        display: none;
+        padding-top: 72px;
+        padding-bottom: 18px;
+        margin: 0;
+        padding-left: 32px;
+        color: white;
+        font-size: 18px;
+        font-weight: 900;
+    }
+
+    ul {
+        overflow: hidden;
+        gap: 24px;
+        align-content: start;
+        background: #1f1f1f;
+        height: 100vh;
+        margin-left: 72px;
+        padding-left: 0;
+    }
+
+    ul li {
+        display: block;
+        position: relative;
+        min-width: 200px;
+        text-align: left;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 24px;
+
+        a {
+            color: $white;
+            text-decoration: none;
+        }
+    }
+}
+
+
+    ul li:after { 
+        content: none; 
+    }

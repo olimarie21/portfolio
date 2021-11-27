@@ -1,0 +1,73 @@
+/*
+Theme Name: Custom Portfolio - OU
+Author: Olivia Underdah
+Description: Custom Post Type Custom Fields Custom Logo 
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: starthere
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/*
+Table of Contents
+
+1.  reset
+2.  variables
+3.  base
+4.  mixins
+5.  animations
+6.  header
+7.  footer
+8.  homepage
+9.  single page
+10.  categories
+11. tags
+12. search
+13. error
+14. front-page
+
+*/
+
+// 1.   reset
+        @import 'partials/_reset';
+
+// 2.   variables
+        @import 'partials/_variables';
+
+// 3.   mixins
+        @import 'partials/_mixin'; 
+
+// 4.   base
+        @import 'partials/_base'; 
+
+// 5.   animations
+        @import 'partials/_animations'; 
+
+// 6.   header
+        @import 'partials/_header';
+
+// 7.   footer
+        @import 'partials/_footer';
+
+// 8.   homepage
+        @import 'partials/_homepage';
+
+// 9.   single page
+        @import 'partials/_single';
+
+// 10.   categories
+        @import 'partials/_category';
+
+// 11.  tags
+        @import 'partials/_tags';
+
+// 12.  search
+        @import 'partials/_search';
+
+// 13. error
+        @import 'partials/_error';
+
+// 14. front-page
+        @import 'partials/_front_page';
