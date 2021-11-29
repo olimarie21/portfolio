@@ -4,7 +4,9 @@
 
 <footer class="site-footer" id="site-footer">
 
-    <?php get_search_form(); ?> 
+    <div class='footer-search'>
+        <?php get_search_form(); ?> 
+    </div>
   <!-- Social Menu -->
     <?php 
         wp_nav_menu( array(

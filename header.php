@@ -8,7 +8,7 @@
 </head>
 <body <?php body_class(); ?>>
 
-<!-- Header Menu -->
+<!-- Header Menu Mobile -->
   <nav class="primary-menu">
     <div class="close-menu">&#10005;</div>
     <?php 
@@ -43,10 +43,34 @@
         <h4 class="site-tagline">
           <?php bloginfo('description'); ?>
         </h4>
-
-      <?php get_search_form(); ?> 
-
       </div>
+
+    <!-- Header Menu Desktop -->
+      <div class="primary-menu-desktop">
+        <?php 
+          wp_nav_menu( array(
+            'theme_location'    =>  'menu-main',
+            'container'         =>  'nav', 
+            'container_class'   =>  'menu-container-desktop',
+            'menu_class'        =>  'main-menu-desktop',
+          )); 
+        ?>
+
+      <div class="desktop-search">
+        <?php get_search_form(); ?> 
+      </div>
+
+      <?php 
+        wp_nav_menu( array(
+            'theme_location'    =>  'menu-social',
+            'container'         =>  'nav', 
+            'container_class'   =>  'menu-container',
+            'menu_class'        =>  'social-menu',
+            'link_before'       =>  '<span class="screen-reader-text"',
+            'link_after'        =>  '</span>'
+        )); 
+    ?>
+    </div>
   </header>
 
   <div id="primary" class="content-area">
