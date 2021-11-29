@@ -37,7 +37,7 @@
             animation: gradient 4s ease-in-out infinite alternate;
     
             backface-visibility: hidden;
-            max-width: 328px;
+            max-width: 330px;
             grid-column: 1/ 1;
             grid-row: 1 / 1;
 
@@ -62,6 +62,14 @@
 }
 
 // *******************Mobile Navigation Pop-Up Styles*******************//
+.primary-menu-desktop {
+    display: none;
+}
+
+.desktop-search {
+    display: none;
+}
+
 .mobile-nav-container .mobile-nav {
     text-decoration: none;
     color: $white;
@@ -131,3 +139,86 @@
     ul li:after { 
         content: none; 
     }
+
+
+// Desktop
+
+@media screen and (min-width: 800px) {
+    .site-header {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        max-width: 350px;
+        z-index: 10000;
+
+        .header-container {
+            padding: 72px;
+        }
+
+        .desktop-search {
+            display: block;
+            padding-left: 72px;
+        }
+    }
+
+    .mobile-nav-container {
+        display: none;
+        padding-right: 72px;
+    }
+
+    .primary-menu-desktop {
+        display: flex;
+        flex-direction: column;
+        margin-top: 68px;
+
+        .menu-container {
+            .social-menu {
+                display: flex;
+                justify-content: flex-start;
+                margin-top: 55%;
+                margin-bottom: 72px;
+
+                li {
+                    min-width: 0;
+                    font-size: 22px;
+                }
+            }
+        }
+
+        ul {
+            overflow: hidden;
+            gap: 24px;
+            align-content: start;
+            margin-left: 72px;
+            padding-left: 0;
+        }
+           
+        ul li {
+            display: block;
+            position: relative;
+            min-width: 200px;
+            text-align: left;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 28px;
+    
+            a {
+                color: $white;
+                text-decoration: none;
+                display: inline-block;
+            }
+        }
+    }
+
+    .primary-menu-desktop .main-menu-desktop li a:hover {
+        color: $purple;
+        transform: translateX(10px);
+    }
+
+    .primary-menu-desktop .social-menu li a:hover {
+        color: $purple;
+    }
+}
