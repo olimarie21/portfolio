@@ -24,6 +24,7 @@
             color: $white;
             height: 24px;
             justify-self: center;
+            font-size: 22px;
         }
     }
 }
@@ -43,9 +44,8 @@ input#s{
     outline: none;
 }
 
-#searchsubmit {
-    height: 30px;
-    border-radius: 4px;
-    border: none;
-    outline: none;
+@media screen and (min-width: 800px) {
+    .site-footer {
+        display: none;
+    }
 }
