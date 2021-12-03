@@ -17,24 +17,28 @@
 <article <?php post_class(); ?>>
 
   <?php if(is_404(  )) :?>
-    <h2 class="error-sceen">Oops...the page doesn't exist</h2>
-    <img class="error-image" src="">
+    <h2 class="error-sceen">Oops...this page doesn't exist</h2>
   <?php endif; ?>
 
-  <h2 class="entry-title">
+  <h3 class="post-title">
     <?php 
-      if (is_single() ) :
-        the_title('<i class="fas fa-bread-slice"></i>');
-      else: ?>
+      if (!is_single() ) : ?>
         <a href="<?php the_permalink();?>"><?php the_title();?></a>
       <?php endif; ?>
+  </h3>
+
+  <h2 class="post-title-single">
+    <?php 
+      if (is_single() ) :
+        the_title();
+    endif; ?>
   </h2>
 
-  <?php if(!is_single()) : ?>
+  <!-- <?php if(!is_single()) : ?>
     <div class="entry-title">
-      <?php the_category( '<h1 id="symbol"> * </h1>');
+      <?php the_category( );
     endif; ?>
-  </div>
+  </div> -->
 
   <div class="entry-thumbnail">
     <?php
@@ -50,18 +54,15 @@
     <?php 
       if ( is_single() ) :
         the_content(); ?>
-            <div class="entry-title single-details">
-          <div class="single-categories">
-            <i class="fas fa-folder"></i>
-            <?php the_category(' &bull; '); ?>
-          </div>
-        </div>
-        <div class="single-tags">
-          <?php the_tags( '<i class="fas fa-tag"></i> Tags: ' , ' | ') ?>
-        </div>
-      <?php else:
-        the_excerpt();
-      endif;
+        <h4 class="project-tools">
+          <div>tools</div>
+          <?php the_meta() ;?>
+        </h4>
+      <?php else: ?>
+        <h4 class="project-tags">
+          <?php the_tags('', " | ") ;?>
+        </h4>
+      <?php endif;
     ?>
   </div>
 </article>
