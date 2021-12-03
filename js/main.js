@@ -11,4 +11,10 @@ jQuery(document).ready(function() {
 
         e.preventDefault();
     });
+
+    jQuery('.main-menu-desktop li').on('click', 'a', function(){
+        console.log('click');
+        jQuery('a').removeClass('active-link');
+        jQuery(this).addClass('active-link');
+    });
 });
