@@ -11,7 +11,7 @@ get_header();
 
 $development_query = new WP_Query(
   array(
-    'tag'        =>  'development',
+    'tag'             =>  'development',
     'posts_per_page'  =>  '2',
     'orderby'         =>  'rand'
   )
@@ -21,7 +21,7 @@ $development_query = new WP_Query(
 if ( $development_query -> have_posts() ) :
   while ( $development_query -> have_posts() ) :
     $development_query -> the_post();
-    get_template_part('template-parts/content-development');
+    get_template_part('template-parts/front-page-loop');
   endwhile;
   else :
     get_template_part('template-parts/content-none.php');
@@ -44,7 +44,7 @@ $design_query = new WP_Query(
 if ( $design_query -> have_posts() ) :
   while ( $design_query -> have_posts() ) :
     $design_query -> the_post();
-    get_template_part('template-parts/content-design');
+    get_template_part('template-parts/front-page-loop');
   endwhile;
   else :
     get_template_part('template-parts/content-none.php');
