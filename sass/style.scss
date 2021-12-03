@@ -20,13 +20,12 @@ Table of Contents
 5.  animations
 6.  header
 7.  footer
-8.  homepage
-9.  single page
-10.  categories
-11. tags
-12. search
-13. error
-14. front-page
+8.  single page
+9.  categories
+10. tags
+11. search
+12. error
+13. front-page
 
 */
 
@@ -51,23 +50,20 @@ Table of Contents
 // 7.   footer
         @import 'partials/_footer';
 
-// 8.   homepage
-        @import 'partials/_homepage';
-
-// 9.   single page
+// 8.   single page
         @import 'partials/_single';
 
-// 10.   categories
+// 9.   categories
         @import 'partials/_category';
 
-// 11.  tags
+// 10.  tags
         @import 'partials/_tags';
 
-// 12.  search
+// 11.  search
         @import 'partials/_search';
 
-// 13. error
+// 12.  error
         @import 'partials/_error';
 
-// 14. front-page
+// 13. front-page
         @import 'partials/_front_page';
