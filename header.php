@@ -9,7 +9,7 @@
 <body <?php body_class(); ?>>
 
 <!-- Header Menu Mobile -->
-  <nav class="primary-menu">
+  <div class="primary-menu">
     <div class="close-menu">&#10005;</div>
     <?php 
       wp_nav_menu( array(
@@ -19,7 +19,20 @@
         'menu_class'        =>  'main-menu',
       )); 
     ?>
-  </nav>
+
+      <!-- Social Menu Mobile -->
+      <?php 
+        wp_nav_menu( array(
+            'theme_location'    =>  'menu-social',
+            'container'         =>  'nav', 
+            'container_class'   =>  'menu-container',
+            'menu_class'        =>  'social-menu',
+            'link_before'       =>  '<span class="screen-reader-text"',
+            'link_after'        =>  '</span>'
+        )); 
+    ?>
+
+  </div>
 
 <!-- Site Header Content -->
   <header class="site-header">
