@@ -79,6 +79,21 @@
 
 .mobile-nav-container {
     grid-column: 2 / 2;
+    
+}
+
+.primary-menu .menu-container #menu-social {
+    display: flex;
+    gap: 0;
+    margin: 0;
+    padding-left: 72px;
+    position: absolute;
+    bottom: 60px;
+    
+    li {
+        min-width: 0;
+        padding-right: 24px;
+    }
 }
 
 .primary-menu {
@@ -87,6 +102,7 @@
     top: 0;
     right: 0;
     width: 70%;
+    height: 100vh;
 
     @media screen and (min-width: 700px) {
         width: 40%;
@@ -113,7 +129,7 @@
         gap: 24px;
         align-content: start;
         background: #1f1f1f;
-        height: 100vh;
+        // height: 100vh;
         margin-left: 72px;
         padding-left: 0;
     }
@@ -195,6 +211,7 @@
             padding-left: 0;
         }
            
+        
         ul li {
             display: block;
             position: relative;
@@ -204,7 +221,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 28px;
-    
+            
             a {
                 color: $white;
                 text-decoration: none;
@@ -212,13 +229,17 @@
             }
         }
     }
-
+    
     .primary-menu-desktop .main-menu-desktop li a:hover {
         color: $purple;
         transform: translateX(10px);
     }
 
     .primary-menu-desktop .social-menu li a:hover {
+        color: $purple;
+    }
+    
+    .primary-menu-desktop .social-menu li a .active-link {
         color: $purple;
     }
 }
