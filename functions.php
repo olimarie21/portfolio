@@ -52,6 +52,7 @@ function portfolioOU_scripts_styles(){
    wp_enqueue_style('portfolioOU_style', get_stylesheet_uri(), array(), time());
    wp_enqueue_style('portfolioOU_style_googlefonts', 'https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap', array(), null);
    wp_enqueue_style('portfolioOU_font_awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+   wp_enqueue_script("jquery");
 
    if (!is_admin( )) :
       wp_enqueue_script( 'portfolioOU_script_main_js', get_template_directory_uri() . '/js/main.js', array(), null, true );
