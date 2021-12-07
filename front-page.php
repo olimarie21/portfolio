@@ -11,7 +11,7 @@ get_header();
 
 $development_query = new WP_Query(
   array(
-    'tag'             =>  'development',
+    'category_name'   =>  'development',
     'posts_per_page'  =>  '2',
     'orderby'         =>  'rand'
   )
@@ -34,7 +34,7 @@ endif;  ?>
 <?php
 $design_query = new WP_Query(
   array(
-    'tag'             =>  'design',
+    'category_name'   =>  'design',
     'posts_per_page'  =>  '2',
     'orderby'         =>  'rand'
   )
