@@ -84,6 +84,7 @@
         )); 
     ?>
     </div>
+
   </header>
 
   <div id="primary" class="content-area">
