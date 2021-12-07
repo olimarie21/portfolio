@@ -367,13 +367,27 @@ template {
 }
 
 h1 {
-  font: bold 900 24px "Outfit", sans-serif;
+  font: 900 32px "Outfit", sans-serif;
 }
 
 h2 {
-  font: bold 700 18px "Outfit", sans-serif;
+  font: 700 24px "Outfit", sans-serif;
   color: #8b80f9;
   text-transform: uppercase;
+}
+
+h3 {
+  font: 700 20px "Outfit", sans-serif;
+  letter-spacing: 1px;
+}
+
+h4 {
+  font: 500 16px "Outfit", sans-serif;
+  letter-spacing: 1px;
+}
+
+body {
+  font: 400 15px/1.2 "Outfit", sans-serif;
 }
 
 body {
@@ -381,7 +395,7 @@ body {
   padding: 0;
   font-family: "Outfit", sans-serif;
   background: #f8f4f1;
-  position: relative;
+  overflow-x: hidden;
 }
 
 a {
@@ -471,7 +485,6 @@ img {
   margin: 0;
   padding: 0;
   padding-top: 36px;
-  font-size: 24pt;
   line-height: 1.2;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -538,6 +551,7 @@ img {
 .primary-menu .menu-container #menu-social li {
   min-width: 0;
   padding-right: 24px;
+  font-size: 26px;
 }
 
 .primary-menu {
@@ -566,7 +580,7 @@ img {
   margin: 0;
   padding-left: 32px;
   color: white;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 900;
 }
 
@@ -625,10 +639,13 @@ ul li:after {
     flex-direction: column;
     margin-top: 68px;
   }
+  .primary-menu-desktop .menu-container {
+    position: absolute;
+    bottom: 0;
+  }
   .primary-menu-desktop .menu-container .social-menu {
     display: flex;
     justify-content: flex-start;
-    margin-top: 55%;
     margin-bottom: 72px;
   }
   .primary-menu-desktop .menu-container .social-menu li {
@@ -715,9 +732,27 @@ input#s {
   outline: none;
 }
 
+input#s:focus {
+  background: #f8f4f1;
+  opacity: 1;
+}
+
 @media screen and (min-width: 800px) {
-  .site-footer {
+  footer nav .social-menu, footer input#s, .footer-search, footer .menu-container {
     display: none;
+  }
+  .site-footer {
+    padding-top: 12px;
+    clip-path: polygon(0 0%, 100% 0, 100% 100%, 0 100%);
+    background: none;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    color: #101010;
+    align-items: end;
+    position: fixed;
+    bottom: 0;
+    right: 32px;
   }
 }
 
@@ -733,8 +768,8 @@ input#s {
 }
 
 .single .entry-content {
-  display: grid;
-  grid-template-columns: 100%;
+  display: flex;
+  flex-direction: column;
   margin-top: -60px;
   padding: 60px 0px 56px 0px;
   background: #1f1f1f;
@@ -743,11 +778,11 @@ input#s {
 }
 
 .single .entry-content p {
-  margin: 24px 36px auto 36px;
+  margin: 12px 36px auto 36px;
 }
 
 .single .entry-content figure {
-  grid-row: 5 / 5;
+  order: 5;
 }
 
 .single .entry-content figure img {
@@ -756,7 +791,7 @@ input#s {
 }
 
 .single .entry-content h3 {
-  margin: 12px 36px 0 36px;
+  margin: 12px 36px 8px 36px;
   text-transform: lowercase;
   color: #5cc1bc;
   letter-spacing: 1px;
@@ -795,6 +830,13 @@ input#s {
   }
   .single .content-area, .single .entry-thumbnail, .single .entry-content {
     grid-column: 2 / 2;
+  }
+  .single .entry-content {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+  .single .entry-content figure {
+    grid-row: 5 / 5;
   }
   .single .content-area .site-main article .post-title {
     margin-top: 72px;
@@ -858,7 +900,7 @@ input#s {
   order: 2;
   margin: 12px 0 0 0;
   letter-spacing: 2px;
-  font-size: 18px;
+  color: #101010;
 }
 
 .category .content-area .site-main article .entry-thumbnail a img {
@@ -872,10 +914,11 @@ input#s {
 
 .category .content-area .site-main article .entry-content .project-tags {
   margin: 4px 0 16px 0;
+  color: #8b80f9;
 }
 
 .category .content-area .site-main article .entry-content .project-tags a {
-  color: #8b80f9;
+  color: #101010;
   font-weight: 400;
   letter-spacing: 1px;
 }
@@ -934,7 +977,6 @@ input#s {
     order: 2;
     margin: 12px 0 0 0;
     letter-spacing: 2px;
-    font-size: 22px;
   }
   .category .content-area .site-main article .entry-thumbnail a img {
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
@@ -970,6 +1012,262 @@ input#s {
   color: #8b80f9;
 }
 
+.tag .content-area .site-main article {
+  display: flex;
+  flex-direction: column;
+  background: #f8f4f1;
+  color: #101010;
+}
+
+.tag .content-area .site-main article h3 a {
+  color: #8b80f9;
+  padding-left: 32px;
+  text-transform: uppercase;
+}
+
+.tag .content-area .site-main article .post-title-single {
+  display: none;
+}
+
+.tag .content-area .site-main article h3.post-title {
+  order: 2;
+  margin: 12px 0 0 0;
+  letter-spacing: 2px;
+}
+
+.tag .content-area .site-main article .entry-thumbnail a img {
+  clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 93%);
+}
+
+.tag .content-area .site-main article .entry-content {
+  order: 3;
+  padding-left: 32px;
+}
+
+.tag .content-area .site-main article .entry-content .project-tags {
+  margin: 4px 0 16px 0;
+  color: #8b80f9;
+}
+
+.tag .content-area .site-main article .entry-content .project-tags a {
+  color: #101010;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+@media screen and (min-width: 800px) {
+  .category, .tag {
+    display: grid;
+    grid-template-columns: 350px auto;
+  }
+  .category .content-area, .tag .content-area {
+    margin-top: 72px;
+    width: 100%;
+    grid-column: 2 / 3;
+  }
+  .category .content-area .site-main, .tag .content-area .site-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .category .content-area .site-main .tag-page-title:nth-of-type(1), .tag .content-area .site-main .tag-page-title:nth-of-type(1) {
+    display: block;
+    margin: 0;
+    grid-column: 1 / -1;
+    text-align: right;
+    padding-right: 72px;
+    margin-bottom: 32px;
+  }
+  .category .content-area .site-main .tag-page-title:nth-of-type(1) span, .tag .content-area .site-main .tag-page-title:nth-of-type(1) span {
+    color: #101010;
+  }
+  .category .content-area .site-main article:nth-of-type(2n), .tag .content-area .site-main article:nth-of-type(2n) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 11% 100%);
+  }
+  .category .content-area .site-main article:nth-of-type(2n) h3 a, .tag .content-area .site-main article:nth-of-type(2n) h3 a {
+    color: #8b80f9;
+    padding-left: 90px;
+  }
+  .category .content-area .site-main article:nth-of-type(2n) .entry-content, .tag .content-area .site-main article:nth-of-type(2n) .entry-content {
+    padding-left: 90px;
+  }
+  .category .content-area .site-main article:nth-of-type(3n), .tag .content-area .site-main article:nth-of-type(3n) {
+    clip-path: polygon(0 0, 100% 0, 89% 100%, 0 100%);
+  }
+  .category .content-area .site-main article:nth-of-type(4n), .tag .content-area .site-main article:nth-of-type(4n) {
+    clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .category .content-area .site-main article, .tag .content-area .site-main article {
+    display: flex;
+    flex-direction: column;
+    clip-path: polygon(0 0, 89% 0, 100% 100%, 0% 100%);
+    background: #1f1f1f;
+    color: #f8f4f1;
+  }
+  .category .content-area .site-main article h3 a, .tag .content-area .site-main article h3 a {
+    color: #8b80f9;
+    padding-left: 32px;
+  }
+  .category .content-area .site-main article h3.post-title, .tag .content-area .site-main article h3.post-title {
+    order: 2;
+    margin: 12px 0 0 0;
+    letter-spacing: 2px;
+  }
+  .category .content-area .site-main article .entry-thumbnail a img, .tag .content-area .site-main article .entry-thumbnail a img {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+  }
+  .category .content-area .site-main article .entry-content, .tag .content-area .site-main article .entry-content {
+    order: 3;
+    padding-left: 32px;
+  }
+  .category .content-area .site-main article .entry-content .project-tags, .tag .content-area .site-main article .entry-content .project-tags {
+    margin: 4px 0 16px 0;
+  }
+  .category .content-area .site-main article .entry-content .project-tags a, .tag .content-area .site-main article .entry-content .project-tags a {
+    color: #f8f4f1;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+}
+
+.tag .tag-page-title {
+  display: none;
+}
+
+.tag .tag-page-title:nth-of-type(1) {
+  display: block;
+  margin: 0;
+  text-align: right;
+  padding-bottom: 12px;
+  padding-right: 32px;
+}
+
+.tag .tag-page-title:nth-of-type(1) span {
+  color: #8b80f9;
+}
+
+.search .content-area .site-main .search-results-title {
+  text-align: right;
+  color: #101010;
+  padding-right: 32px;
+}
+
+.search .content-area .site-main .search-results-title span {
+  color: #8b80f9;
+}
+
+.search .content-area .site-main article {
+  display: flex;
+  flex-direction: column;
+}
+
+.search .content-area .site-main article .post-title-single {
+  display: none;
+}
+
+.search .content-area .site-main article h3, .search .content-area .site-main article .entry-content {
+  padding: 0 32px;
+  margin: 0;
+}
+
+.search .content-area .site-main article .entry-content {
+  order: 3;
+  margin: 0;
+}
+
+.search .content-area .site-main article .entry-content .project-tags {
+  color: #101010;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.search .content-area .site-main article .entry-content .project-tags a {
+  color: #8b80f9;
+}
+
+.search .content-area .site-main article .post-title {
+  order: 2;
+  margin-top: 12px;
+}
+
+.search .content-area .site-main article .post-title a {
+  color: #101010;
+  text-transform: uppercase;
+}
+
+.search .content-area .site-main article .entry-thumbnail {
+  order: 1;
+  clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 93%);
+}
+
+.search .search-results-title {
+  display: none;
+}
+
+.search .search-results-title:nth-of-type(1) {
+  display: block;
+}
+
+@media screen and (min-width: 800px) {
+  .search {
+    display: grid;
+    grid-template-columns: 350px auto;
+  }
+  .search .content-area {
+    grid-column: 2 / 2;
+  }
+  .search .content-area .site-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 72px 0;
+  }
+  .search .content-area .site-main article .post-title a {
+    color: #8b80f9;
+  }
+  .search .content-area .site-main article .post-title {
+    margin-top: 16px;
+  }
+  .search .content-area .site-main article .entry-content .project-tags {
+    margin: 0;
+    margin-bottom: 16px;
+    color: #8b80f9;
+  }
+  .search .content-area .site-main article .entry-content .project-tags a {
+    color: #f8f4f1;
+  }
+  .search .content-area .site-main article:nth-of-type(2n) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 11% 100%);
+  }
+  .search .content-area .site-main article:nth-of-type(2n) .entry-content, .search .content-area .site-main article:nth-of-type(2n) .post-title {
+    padding-left: 90px;
+  }
+  .search .content-area .site-main article:nth-of-type(3n) {
+    clip-path: polygon(0 0, 100% 0, 89% 100%, 0 100%);
+  }
+  .search .content-area .site-main article:nth-of-type(4n) {
+    clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .search .content-area .site-main article {
+    clip-path: polygon(0 0, 89% 0, 100% 100%, 0% 100%);
+    background: #1f1f1f;
+  }
+  .search .content-area .site-main article .entry-thumbnail {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+  }
+  .search .content-area .site-main .search-results-title {
+    grid-column: 1 / -1;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+  .search .content-area .site-main article:nth-of-type(2n) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 11% 100%);
+  }
+  .search .content-area .site-main article:nth-of-type(2n) .entry-content, .search .content-area .site-main article:nth-of-type(2n) .post-title {
+    padding-left: 50px;
+  }
+}
+
 .home #primary #main {
   display: flex;
   flex-direction: column;
@@ -978,12 +1276,6 @@ input#s {
 .home #primary #main h2 {
   color: #8b80f9;
   text-transform: uppercase;
-  font-size: 18pt;
-}
-
-.home #primary #main h3 {
-  font-weight: 600;
-  font-size: 13pt;
 }
 
 .home #primary #main h3 a {
@@ -993,14 +1285,7 @@ input#s {
 .home #primary #main h4 {
   text-align: left;
   color: #101010;
-  font-size: 14px;
   font-weight: 500;
-}
-
-@media screen and (min-width: 650px) {
-  .home #primary #main img {
-    height: 400px;
-  }
 }
 
 .home #primary #main .development-section article .project-details, .home #primary #main .design-section article .project-details {
@@ -1020,6 +1305,10 @@ input#s {
   list-style: none;
   margin: 0;
   padding: 0 36px;
+}
+
+.home #primary #main .development-section article .project-details .project-tools ul.post-meta li span, .home #primary #main .design-section article .project-details .project-tools ul.post-meta li span {
+  font-weight: 600;
 }
 
 .home #primary #main .development-section {
@@ -1077,6 +1366,10 @@ input#s {
   text-align: right;
 }
 
+.home #primary #main .design-section article .project-details .project-tools .post-meta li span {
+  font-weight: 600;
+}
+
 .home #primary #main .category-design .project-thumbnail a img {
   clip-path: polygon(0 8%, 100% 0, 100% 93%, 0 100%);
 }
@@ -1109,9 +1402,6 @@ input#s {
   }
   .home #primary #main .development-section article, .home #primary #main .design-section article {
     position: relative;
-  }
-  .home #primary #main .development-section article .project-thumbnail a img, .home #primary #main .design-section article .project-thumbnail a img {
-    clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 93%);
   }
   .home #primary #main .development-section article .project-details, .home #primary #main .design-section article .project-details {
     display: flex;
@@ -1172,9 +1462,6 @@ input#s {
   .home #primary #main .development-section .project-details h3, .home #primary #main .development-section .project-details h4, .home #primary #main .design-section .project-details h3, .home #primary #main .design-section .project-details h4 {
     margin: 0;
     letter-spacing: 1.25px;
-  }
-  .home #primary #main .development-section .project-details h3, .home #primary #main .design-section .project-details h3 {
-    font-size: 20px;
   }
   .home #primary #main .development-section .project-details h4, .home #primary #main .design-section .project-details h4 {
     padding-top: 6px;
@@ -1253,10 +1540,10 @@ input#s {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 11% 100%);
   }
   .home #primary #main .development-section article:nth-of-type(2) .project-details h3 {
-    padding-left: 80px;
+    padding-left: 90px;
   }
   .home #primary #main .development-section article:nth-of-type(2) .project-details h4 {
-    padding-left: 80px;
+    padding-left: 90px;
   }
   .home #primary #main .design-section {
     grid-row: 1 / 2;

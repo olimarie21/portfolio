@@ -21,7 +21,6 @@
             margin: 0;
             padding: 0;
             padding-top: 36px;
-            font-size: 24pt;
             line-height: 1.2;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -61,7 +60,10 @@
     }
 }
 
-// *******************Mobile Navigation Pop-Up Styles*******************//
+// ************************************************************************************************************************ //
+// Mobile Navigation Pop-Up Styles***************************************************************************************** //
+// ************************************************************************************************************************ //
+
 .primary-menu-desktop {
     display: none;
 }
@@ -93,6 +95,7 @@
     li {
         min-width: 0;
         padding-right: 24px;
+        font-size: 26px;
     }
 }
 
@@ -120,7 +123,7 @@
         margin: 0;
         padding-left: 32px;
         color: white;
-        font-size: 18px;
+        font-size: 22px;
         font-weight: 900;
     }
 
@@ -129,7 +132,6 @@
         gap: 24px;
         align-content: start;
         background: #1f1f1f;
-        // height: 100vh;
         margin-left: 72px;
         padding-left: 0;
     }
@@ -157,7 +159,9 @@
     }
 
 
-// Desktop
+// ************************************************************************************************************************ //
+// Desktop View/Tablet **************************************************************************************************** //
+// ************************************************************************************************************************ //
 
 @media screen and (min-width: 800px) {
     .site-header {
@@ -190,10 +194,11 @@
         margin-top: 68px;
 
         .menu-container {
+            position: absolute;
+            bottom: 0;
             .social-menu {
                 display: flex;
                 justify-content: flex-start;
-                margin-top: 55%;
                 margin-bottom: 72px;
 
                 li {

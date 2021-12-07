@@ -5,13 +5,9 @@
     h2 {
         color: $purple;
         text-transform: uppercase;
-        font-size: 18pt;
     }
 
     h3 {
-        font-weight: 600;
-        font-size: 13pt;
-
         a {
             color: inherit;
         }
@@ -21,14 +17,7 @@
     h4 {
         text-align: left;
         color: $black;
-        font-size: 14px;
         font-weight: 500;
-    }
-
-    @media screen and (min-width: 650px) {
-        img {
-            height: 400px;
-        }
     }
     
     .development-section article, .design-section article {
@@ -48,6 +37,12 @@
                     list-style: none;
                     margin: 0;
                     padding: 0 36px;
+
+                    li {
+                        span {
+                        font-weight: 600;
+                       }
+                    }
                 }
         }
     }
@@ -105,6 +100,10 @@
             .post-meta li {
                 color: $white;
                 text-align: right;
+
+                span {
+                    font-weight: 600;
+                }
             }
         }
     }
@@ -114,8 +113,10 @@
     }
 }
 
+// ************************************************************************************************************************ //
+// Tablet View ************************************************************************************************************ //
+// ************************************************************************************************************************ //
 
-// Tablet View
 @media screen and (min-width: 800px) {
     .home {
     display: grid;
@@ -148,10 +149,6 @@
         .development-section, .design-section {
             article {
                 position: relative;
-
-                .project-thumbnail a img {
-                clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 93%);
-                }
 
                 .project-details {
 
@@ -194,7 +191,6 @@
             }
             
                 article:first-of-type {
-
                     .project-thumbnail a img {
                         position: relative;
                 }
@@ -237,10 +233,6 @@
                 margin: 0;
                 letter-spacing: 1.25px;
             }
-            
-            h3 {
-                font-size: 20px;
-            }
 
             h4 {
                 padding-top: 6px;
@@ -268,8 +260,10 @@
     }
 }
 
+// ************************************************************************************************************************ //
+// Desktop View *********************************************************************************************************** //
+// ************************************************************************************************************************ //
 
-// Desktop View 
 @media screen and (min-width: 1000px) {
     .home {
         display: grid;
@@ -318,7 +312,7 @@
                 display: grid;
                 grid-template-rows: auto auto;
                 grid-template-columns: 1fr 1fr;
-                padding-bottom:36px;
+                padding-bottom: 36px;
 
                 article:first-of-type {
                     clip-path: polygon(0 0, 89% 0, 100% 100%, 0% 100%);
@@ -343,11 +337,11 @@
 
                     .project-details {
                         h3 {
-                            padding-left: 80px;
+                            padding-left: 90px;
                         }
     
                         h4 {
-                            padding-left: 80px;
+                            padding-left: 90px;
                         }
                     }
                 }
@@ -358,7 +352,6 @@
                 display: grid;
                 grid-template-rows: auto auto;
                 grid-template-columns: 1fr 1fr;
-                // background: $black;
                 padding-top: 36px;
 
                 article:first-of-type {

@@ -16,13 +16,13 @@ $blue: #5cc1bc;
 
 $font:'Outfit', sans-serif;
 
-$h1: bold 900 24px $font;
-$h2: bold 700 18px $font;
-$h3: bold 700 15px $font;
-$h4: "";
+$h1: 900 32px $font;
+$h2: 700 24px $font;
+$h3: 700 20px $font;
+$h4: 500 16px $font;
 
 
-$body: "";
+$body: 400 15px/1.2 $font;
 
 h1 {
     font: $h1;
@@ -32,4 +32,18 @@ h2 {
     font: $h2;
     color: $purple;
     text-transform: uppercase;
+}
+
+h3 {
+    font: $h3;
+    letter-spacing: 1px;
+}
+
+h4 {
+    font: $h4;
+    letter-spacing: 1px;
+}
+
+body {
+    font: $body;
 }

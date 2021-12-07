@@ -3,7 +3,8 @@ body {
     padding: 0;
     font-family: $font;
     background: $white;
-    position: relative;
+    // position: relative;
+    overflow-x: hidden;
 }
 
 a {
