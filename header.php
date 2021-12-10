@@ -83,6 +83,7 @@
             'link_after'        =>  '</span>'
         )); 
     ?>
+    <p class="desktop-copyright"> &copy; 2021, Olivia Underdah</p>
     </div>
 
   </header>
