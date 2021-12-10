@@ -4,6 +4,10 @@
     padding-bottom: 36px;
     clip-path: polygon(0 0, 100% 0, 100% 76%, 0 99%);
 
+    .desktop-copyright {
+        display: none;
+    }
+
     .header-container {
         clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%);
         background: $black;
@@ -72,6 +76,7 @@
     display: none;
 }
 
+
 .mobile-nav-container .mobile-nav {
     text-decoration: none;
     color: $white;
@@ -121,7 +126,7 @@
         padding-top: 72px;
         padding-bottom: 18px;
         margin: 0;
-        padding-left: 32px;
+        padding-left: 36px;
         color: white;
         font-size: 22px;
         font-weight: 900;
@@ -172,6 +177,15 @@
         height: 100%;
         max-width: 350px;
         z-index: 10000;
+        
+        .primary-menu-desktop .desktop-copyright {
+            display: block;
+            position: absolute;
+            bottom: 35px;
+            padding-left: 72px;
+            opacity: .25;
+            font-size: 11px;
+        }
 
         .header-container {
             padding: 72px;

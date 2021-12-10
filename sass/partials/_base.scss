@@ -5,6 +5,11 @@ body {
     background: $white;
     // position: relative;
     overflow-x: hidden;
+
+    @media screen and (min-width: 800px) {
+        display: grid;
+        grid-template-columns: 350px auto;
+    }
 }
 
 a {

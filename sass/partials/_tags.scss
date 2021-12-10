@@ -9,7 +9,7 @@
 
             h3 a {
                 color: $purple;
-                padding-left: 32px;
+                padding-left: 36px;
                 text-transform: uppercase;
             }
             
@@ -29,7 +29,7 @@
             }
             .entry-content {
                 order: 3;
-                padding-left: 32px;
+                padding-left: 36px;
 
                 .project-tags {
                     margin: 4px 0 16px 0;
@@ -46,12 +46,31 @@
     }
 }
 
+.tag {
+    .tag-page-title {
+        display: none;
+    }
+    
+    .tag-page-title:nth-of-type(1) {
+        display: block;
+        margin: 0;
+        text-align: right;
+        color: $purple;
+        padding-bottom: 12px;
+        padding-right: 36px;
+
+        span {
+            color: $black;
+        }
+    }
+}
+
 // ************************************************************************************************************************ //
-// Desktop/Tablet View **************************************************************************************************** //
+// Tablet View ************************************************************************************************************ //
 // ************************************************************************************************************************ //
 
 @media screen and (min-width: 800px) {
-    .category, .tag {
+    .tag {
         display: grid;
         grid-template-columns: 350px auto;
 
@@ -62,52 +81,25 @@
 
             .site-main {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 100%;
                 
                 .tag-page-title:nth-of-type(1) {
                     display: block;
                     margin: 0;
                     grid-column: 1 / -1;
                     text-align: right;
-                    padding-right: 72px;
-                    margin-bottom: 32px;
-                    
-                    span {
-                        color: $black;
-                    }
-                }
-                
-                article:nth-of-type(2n) {
-                    clip-path: polygon(0 0, 100% 0, 100% 100%, 11% 100%);
-                    
-                    h3 a {
-                        color: $purple;
-                        padding-left: 90px;
-                    }
-
-                    .entry-content {
-                        padding-left: 90px;
-                    }
-                }
-
-                article:nth-of-type(3n) {
-                    clip-path: polygon(0 0, 100% 0, 89% 100%, 0 100%);
-                }
-
-                article:nth-of-type(4n) {
-                    clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%);
+                    padding-right: 36px;
+                    margin-bottom: 36px;
                 }
 
                 article {
                     display: flex;
                     flex-direction: column;
-                    clip-path: polygon(0 0, 89% 0, 100% 100%, 0% 100%);
-                    background: $dark-grey;
-                    color: $white;
+                    margin-bottom: 12px;
 
                     h3 a {
                         color: $purple;
-                        padding-left: 32px;
+                        padding-left: 36px;
                     }
             
                     h3.post-title {
@@ -115,20 +107,15 @@
                         margin: 12px 0 0 0;
                         letter-spacing: 2px;
                     }
-
-                    .entry-thumbnail a img {
-                        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
-                    }
                     
                     .entry-content {
                         order: 3;
-                        padding-left: 32px;
+                        padding-left: 36px;
 
                         .project-tags {
                             margin: 4px 0 16px 0;
 
                             a {
-                                color: $white;
                                 font-weight: 400;
                                 letter-spacing: 1px;
                             }
@@ -139,23 +126,61 @@
             }
         }
     }
+
 }
 
-.tag {
-    .tag-page-title {
-        display: none;
-    }
-    
-    .tag-page-title:nth-of-type(1) {
-        display: block;
-        margin: 0;
-        text-align: right;
-        // color: $black;
-        padding-bottom: 12px;
-        padding-right: 32px;
+// ************************************************************************************************************************ //
+// Desktop View ************************************************************************************************************ //
+// ************************************************************************************************************************ //
 
-        span {
-            color: $purple;
+@media screen and (min-width: 1100px) {
+    .tag .content-area .site-main {
+        grid-template-columns: 1fr 1fr;
+
+        article {
+            clip-path: polygon(0 0, 89% 0, 100% 100%, 0% 100%);
+            margin-bottom: 72px;
+            background: $dark-grey;
+            color: $white;
+            margin-bottom: 72px;
+
+            .entry-content .project-tags a {
+                color: $white;
+            }
+
+            
+            .entry-thumbnail a img {
+                clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+            }
         }
+
+        article:nth-of-type(2n) {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 11% 100%);
+            
+            h3.post-title {
+                padding-left: 90px;
+            }
+
+            h3 a {
+                color: $purple;
+            }
+
+            .entry-content {
+                padding-left: 90px;
+            }
+        }
+
+        article:nth-of-type(3n) {
+            clip-path: polygon(0 0, 100% 0, 89% 100%, 0 100%);
+        }
+
+        article:nth-of-type(4n) {
+            clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        
+    }
+    .content-area .site-main article:nth-of-type(2) h3 a {
+        padding-left: 0;
     }
 }

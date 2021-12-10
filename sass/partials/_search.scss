@@ -2,7 +2,7 @@
     .search-results-title {
         text-align: right;
         color: $black;
-        padding-right: 32px;
+        padding-right: 36px;
 
         span {
             color: $purple;
@@ -18,7 +18,7 @@
         }
 
         h3, .entry-content {
-            padding: 0 32px;
+            padding: 0 36px;
             margin: 0;
         }
 
@@ -29,7 +29,7 @@
             .project-tags {
                 color: $black;
                 margin: 0;
-                margin-bottom: 12px;
+                margin-bottom: 18px;
 
                 a {
                     color: $purple;
@@ -65,11 +65,31 @@
 }
 
 // ************************************************************************************************************************ //
-// Desktop View *********************************************************************************************************** //
+// Tablet View ************************************************************************************************************ //
 // ************************************************************************************************************************ //
 
 
 @media screen and (min-width: 800px) {
+    .search {
+        .content-area {
+            grid-column: 2 / 2;
+            margin-top: 72px;        
+            width: 100%;
+            grid-column: 2 / 3;
+
+            .site-main {
+                display: grid;
+                grid-template-columns: 100%;
+            }
+        }
+    }
+}
+
+// ************************************************************************************************************************ //
+// Desktop View *********************************************************************************************************** //
+// ************************************************************************************************************************ //
+
+@media screen and (min-width: 1100px) {
     .search {
         display: grid;
         grid-template-columns: 350px auto;
@@ -80,7 +100,6 @@
             .site-main {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                padding: 72px 0 ;
                 
                 article {
                     .post-title a {
@@ -122,6 +141,8 @@
                 article {
                     clip-path: polygon(0 0, 89% 0, 100% 100%, 0% 100%);
                     background: $dark-grey;
+                    margin-bottom: 72px;
+
                     .entry-thumbnail {
                         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
                     }
@@ -129,7 +150,7 @@
 
                 .search-results-title {
                     grid-column: 1 / -1;
-                    padding-right: 32px;
+                    padding-right: 36px;
                 }
             }
         }
@@ -137,13 +158,13 @@
     }
 }
 
-@media screen and (min-width: 800px) and (max-width: 1000px) {
-    .search .content-area .site-main article:nth-of-type(2n) {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 11% 100%);
+// @media screen and (min-width: 800px) and (max-width: 1000px) {
+//     .search .content-area .site-main article:nth-of-type(2n) {
+//         clip-path: polygon(0 0, 100% 0, 100% 100%, 11% 100%);
         
 
-        .entry-content, .post-title {
-            padding-left: 50px;
-        }
-    }
-}
+//         .entry-content, .post-title {
+//             padding-left: 50px;
+//         }
+//     }
+// }
