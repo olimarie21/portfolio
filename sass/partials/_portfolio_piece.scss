@@ -1,0 +1,248 @@
+.single-portfolio_piece {
+    .entry-thumbnail img {
+        clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 93%);
+        height: 300px;
+        object-position: center;
+    }
+
+    
+    .content-area .site-main article {
+        .post-title-single {
+            text-align: right;
+            margin-right: 36px;
+            margin-top: -10px;
+        }
+
+        p strong a {
+            color: $purple;
+        }
+    }
+    
+    .content-area .site-main article .entry-content .wp-block-social-links {
+        grid-row: 1 /1;
+        grid-column: 1/1;
+        margin: 0;
+        padding: 0;
+        padding-left: 36px;
+        border: none;
+        padding-top: 12px;
+        z-index: 10;
+    }
+    
+    .content-area .site-main article .entry-content {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto auto auto;
+        margin-top: -60px;
+        padding: 60px 0px 56px 0px;
+        background: $dark-grey;
+        color: $white;
+        margin-bottom: -30px;
+        
+        p {
+            margin: 12px 36px auto 36px;
+        }
+        
+        figure {
+            order: 5;
+            
+            img {
+                clip-path: polygon(0 8%, 100% 0, 100% 93%, 0 100%);
+                grid-row: 4 / 4;
+            }
+        }
+        
+        h3 {
+            margin: 12px 36px 8px 36px;
+            text-transform: lowercase;
+            color: $blue;
+            letter-spacing: 1px;
+            grid-row: 1/1;
+            grid-column: 1/1;
+            padding: 4px 0 4px 40px;
+        }
+        
+        .project-tools {
+            padding: 12px 36px;
+            
+            div {
+                color: $purple;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                padding-bottom: 12px;
+            }
+            
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                
+                li {
+                    letter-spacing: 2px;
+                    font-weight: 500;
+                }
+                
+                li span {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    .wp-block-social-links .wp-social-link.wp-social-link.wp-social-link {
+        margin: 0;
+    }
+    .wp-block-social-links:not(.is-style-logos-only) .wp-social-link-github {
+        background-color: transparent; 
+        color: $white;
+        
+        @media screen and (min-width: 1100px) {
+            color: $black;
+        }
+    }
+    .wp-block-social-links:not(.is-style-logos-only) .wp-social-link {
+        background-color: inherit; 
+        color: inherit;
+    }
+    
+    article .entry-content ul.wp-block-social-links {
+        // grid-row: 1 /1;
+        // grid-column: 2 /2;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    .content-area .site-main .category-design .entry-content h3 {
+        padding: 4px 0;
+    }
+}
+
+// ************************************************************************************************************************ //
+// Tablet View ************************************************************************************************************ //
+// ************************************************************************************************************************ //
+
+@media screen and (min-width: 800px) {
+    .single-portfolio_piece {
+        display: grid;
+        grid-template-columns: 350px auto;
+
+        .content-area .site-main .category-design .entry-content p {
+            grid-column: 1 / 1;
+        }
+        
+        .content-area, .entry-thumbnail, .entry-content {
+            grid-column: 2 / 2;
+        }
+
+        .content-area {
+            grid-column: 2 / 2;
+        }
+        .content-area .site-main article .entry-content {
+            // display: flex;
+            background: $black;
+
+            .project-tools {
+                grid-column: 1/1;
+            }
+
+            figure {
+                grid-row: 5 / 5;
+            }
+        }
+
+        .content-area {
+            
+            .site-main article .post-title {
+                margin-top: 72px;
+                margin-right: 72px;
+            }
+            h3, p, h4 {
+                grid-column: 2 / 2;
+            }
+        }
+    }
+}
+
+// ************************************************************************************************************************ //
+// Desktop View *********************************************************************************************************** //
+// ************************************************************************************************************************ //
+
+
+@media screen and (min-width: 1100px) {
+    .single-portfolio_piece {
+
+        .entry-thumbnail img {
+            // margin-left: 72px;
+            clip-path: polygon(0 0%, 100% 0%, 100% 90%, 0 100%);
+            height: 450px;
+        }
+
+        .content-area .site-main .category-design .entry-content {
+
+            h3 {
+                padding: 4px 4px 4px 0;
+            }
+
+            .project-tools {
+                grid-row: 3 / 3;
+            }
+        }
+
+        .content-area .site-main article .entry-content {
+            display: grid;
+            grid-template-columns: auto auto;
+            background: $white;
+            color: $black;
+            margin: 0px 72px;
+            margin-left: 0;
+            padding: 12px 0 0 0;
+
+            ul.wp-block-social-links {
+                grid-row: 1 /1;
+                grid-column: 2 /2;
+                margin: 0;
+                padding: 0;
+                border: none;
+            }
+
+            h3, p {
+                margin: 0;
+                padding: 12px 0 0 0;
+            }
+
+            h3 {
+                grid-row: 1 /1;
+                padding: 4px;
+                padding-left: 40px;
+                grid-column: 2 / 2;
+            }
+
+            .project-tools {
+                padding: 0;
+                grid-column: 2 / 2;
+            }
+
+            figure {
+                grid-column: 1 / 1;
+                grid-row: 1 / 5;
+                margin-right: 72px;
+                
+                img {
+                    clip-path: polygon(0 4%, 100% 0%, 100% 100%, 0 100%);
+                    grid-row: 1 / 5;
+                    height: 350px;
+                }
+            }
+        }
+    }
+
+    .wp-block-social-links {
+        grid-row: 1 /1;
+        grid-column: 2 /2;
+        margin: 0;
+        padding: 0;
+        border: none;
+        z-index: 10;
+    }
+}
