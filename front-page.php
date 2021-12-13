@@ -4,13 +4,15 @@ get_header();
 
 ?>
 
+<!-- Dev Section -->
 <div class="development-section">
   <h2>Development</h2>
 
+<!-- Dev Query -->
 <?php
-
 $development_query = new WP_Query(
   array(
+    'post_type'       =>  'portfolio_piece',
     'category_name'   =>  'development',
     'posts_per_page'  =>  '2',
     'orderby'         =>  'rand'
@@ -28,12 +30,15 @@ if ( $development_query -> have_posts() ) :
 endif;  ?>
 </div>
 
+<!-- Design Section -->
 <div class="design-section">
   <h2>Design</h2>
 
+<!-- Design Query -->
 <?php
 $design_query = new WP_Query(
   array(
+    'post_type'       =>  'portfolio_piece',
     'category_name'   =>  'design',
     'posts_per_page'  =>  '2',
     'orderby'         =>  'rand'

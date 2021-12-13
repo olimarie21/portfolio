@@ -7,6 +7,7 @@
     <div class='footer-search'>
         <?php get_search_form(); ?> 
     </div>
+
   <!-- Social Menu -->
     <?php 
         wp_nav_menu( array(
@@ -25,4 +26,5 @@
 </div> 
 </body>
 <?php wp_footer(); ?>
+
 </html>

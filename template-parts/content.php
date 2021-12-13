@@ -1,5 +1,6 @@
 <?php ?>
-  
+
+<!-- Conditional display of title -->
   <?php
     if(is_category(  )) : ?>
       <h2 class="category-title"> <?php the_archive_title(); ?> </h2>
@@ -10,8 +11,8 @@
     <?php endif;?>
     
 
+<!-- Conditional display of content -->
   <article <?php post_class(); ?>>
-
     <?php if(is_404(  )) :?>
       <h2 class="error-sceen">Sorry, it looks like this page doesn't exist...</h2>
     <?php endif; ?>
@@ -29,12 +30,6 @@
           the_title();
       endif; ?>
     </h2>
-
-    <!-- <?php if(!is_single()) : ?>
-      <div class="entry-title">
-        <?php the_category( );
-      endif; ?>
-    </div> -->
 
     <div class="entry-thumbnail">
       <?php
