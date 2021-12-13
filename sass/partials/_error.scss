@@ -1,0 +1,9 @@
+.error404 .content-area .site-main {
+    margin: 36px;
+}
+
+@media screen and (min-width: 800px) {
+    .content-area {
+        grid-column: 2 / 2;
+    }
+}

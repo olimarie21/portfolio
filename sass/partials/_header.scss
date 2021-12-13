@@ -2,7 +2,7 @@
     background: $dark-grey;
     color: $white;
     padding-bottom: 36px;
-    clip-path: polygon(0 0, 100% 0, 100% 76%, 0 99%);
+    clip-path: polygon(0 0, 100% 0, 100% 76%, 0 99%); // HTML/CSS requirement: advanced CSS clip-path use (included throughout site)
 
     .desktop-copyright {
         display: none;
@@ -29,7 +29,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 900;
-            background-image: linear-gradient(to right, $blue, $purple);
+            background-image: linear-gradient(to right, $blue, $purple); // HTML/CSS requirement: advanced css effect - gradient text
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
@@ -229,8 +229,7 @@
             margin-left: 72px;
             padding-left: 0;
         }
-           
-        
+
         ul li {
             display: block;
             position: relative;
@@ -251,7 +250,7 @@
     
     .primary-menu-desktop .main-menu-desktop li a:hover {
         color: $purple;
-        transform: translateX(10px);
+        transform: translateX(10px); // HTML/CSS requirement: advanced CSS effect - translateX on hover
     }
 
     .primary-menu-desktop .social-menu li a:hover {

@@ -1,6 +1,10 @@
 .tag .content-area {
     .site-main {
 
+        .tag-page-title:nth-of-type(1) {
+            padding: 8px 36px 8px 36px;
+        }
+
         article {
             display: flex;
             flex-direction: column;
@@ -9,7 +13,6 @@
 
             h3 a {
                 color: $purple;
-                padding-left: 36px;
                 text-transform: uppercase;
             }
             
@@ -19,7 +22,7 @@
     
             h3.post-title {
                 order: 2;
-                margin: 12px 0 0 0;
+                margin: 12px 36px 0 36px;
                 letter-spacing: 2px;
 
             }
@@ -88,7 +91,6 @@
                     margin: 0;
                     grid-column: 1 / -1;
                     text-align: right;
-                    padding-right: 36px;
                     margin-bottom: 36px;
                 }
 
@@ -99,18 +101,17 @@
 
                     h3 a {
                         color: $purple;
-                        padding-left: 36px;
+                        padding-left: 0px;
                     }
             
                     h3.post-title {
                         order: 2;
-                        margin: 12px 0 0 0;
+                        margin: 12px 36px 0 36px;
                         letter-spacing: 2px;
                     }
                     
                     .entry-content {
                         order: 3;
-                        padding-left: 36px;
 
                         .project-tags {
                             margin: 4px 0 16px 0;
@@ -158,6 +159,7 @@
             clip-path: polygon(0 0, 100% 0, 100% 100%, 11% 100%);
             
             h3.post-title {
+                margin-left: 0;
                 padding-left: 90px;
             }
 

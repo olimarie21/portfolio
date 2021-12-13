@@ -4,7 +4,7 @@ Author: Olivia Underdah
 Description: Custom Post Type Custom Fields Custom Logo 
 Version: 1.0
 License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: starthere
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -25,6 +25,7 @@ Table of Contents
 11. search
 12. error
 13. front-page
+14. portfolio_piece
 
 */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -762,18 +763,19 @@ input#s:focus {
   }
 }
 
-.single .entry-thumbnail img {
+.single-post .entry-thumbnail img {
   clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 93%);
   height: 300px;
+  object-position: center;
 }
 
-.single .content-area .site-main article .post-title-single {
+.single-post .content-area .site-main article .post-title-single {
   text-align: right;
   margin-right: 36px;
   margin-top: -10px;
 }
 
-.single .content-area .site-main article .entry-content .wp-block-social-links {
+.single-post .content-area .site-main article .entry-content .wp-block-social-links {
   grid-row: 1 /1;
   grid-column: 1/1;
   margin: 0;
@@ -784,10 +786,9 @@ input#s:focus {
   z-index: 10;
 }
 
-.single .content-area .site-main article .entry-content {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: auto auto auto auto auto;
+.single-post .content-area .site-main article .entry-content {
+  display: flex;
+  flex-direction: column;
   margin-top: -60px;
   padding: 60px 0px 56px 0px;
   background: #1f1f1f;
@@ -795,176 +796,142 @@ input#s:focus {
   margin-bottom: -30px;
 }
 
-.single .content-area .site-main article .entry-content p {
+.single-post .content-area .site-main article .entry-content p {
   margin: 12px 36px auto 36px;
 }
 
-.single .content-area .site-main article .entry-content figure {
+.single-post .content-area .site-main article .entry-content figure {
   order: 5;
 }
 
-.single .content-area .site-main article .entry-content figure img {
+.single-post .content-area .site-main article .entry-content figure img {
   clip-path: polygon(0 8%, 100% 0, 100% 93%, 0 100%);
-  grid-row: 4 / 4;
 }
 
-.single .content-area .site-main article .entry-content h3 {
+.single-post .content-area .site-main article .entry-content h3 {
   margin: 12px 36px 8px 36px;
   text-transform: lowercase;
   color: #5cc1bc;
   letter-spacing: 1px;
-  grid-row: 1/1;
-  grid-column: 1/1;
-  padding: 4px 0 4px 40px;
 }
 
-.single .content-area .site-main article .entry-content .project-tools {
+.single-post .content-area .site-main article .entry-content .project-tools {
   padding: 12px 36px;
 }
 
-.single .content-area .site-main article .entry-content .project-tools div {
+.single-post .content-area .site-main article .entry-content .project-tools div {
   color: #8b80f9;
   text-transform: uppercase;
   letter-spacing: 2px;
   padding-bottom: 12px;
 }
 
-.single .content-area .site-main article .entry-content .project-tools ul {
+.single-post .content-area .site-main article .entry-content .project-tools ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.single .content-area .site-main article .entry-content .project-tools ul li {
+.single-post .content-area .site-main article .entry-content .project-tools ul li {
   letter-spacing: 2px;
   font-weight: 500;
 }
 
-.single .content-area .site-main article .entry-content .project-tools ul li span {
+.single-post .content-area .site-main article .entry-content .project-tools ul li span {
   display: none;
 }
 
-.single .wp-block-social-links .wp-social-link.wp-social-link.wp-social-link {
+.single-post .wp-block-social-links .wp-social-link.wp-social-link.wp-social-link {
   margin: 0;
 }
 
-.single .wp-block-social-links:not(.is-style-logos-only) .wp-social-link-github {
+.single-post .wp-block-social-links:not(.is-style-logos-only) .wp-social-link-github {
   background-color: transparent;
   color: #f8f4f1;
 }
 
 @media screen and (min-width: 1100px) {
-  .single .wp-block-social-links:not(.is-style-logos-only) .wp-social-link-github {
+  .single-post .wp-block-social-links:not(.is-style-logos-only) .wp-social-link-github {
     color: #101010;
   }
 }
 
-.single .wp-block-social-links:not(.is-style-logos-only) .wp-social-link {
+.single-post .wp-block-social-links:not(.is-style-logos-only) .wp-social-link {
   background-color: inherit;
   color: inherit;
 }
 
-.single article .entry-content ul.wp-block-social-links {
+.single-post article .entry-content ul.wp-block-social-links {
   margin: 0;
   padding: 0;
   border: none;
 }
 
-.single .content-area .site-main .category-design .entry-content h3 {
+.single-post .content-area .site-main .category-design .entry-content h3 {
   padding: 4px 0;
 }
 
 @media screen and (min-width: 800px) {
-  .single {
+  .single-post {
     display: grid;
-    grid-template-columns: 350px auto;
   }
-  .single .content-area .site-main .category-design .entry-content p {
-    grid-column: 1 / 1;
+  .single-post .content-area .site-main article .entry-content {
+    background: #101010;
   }
-  .single .content-area, .single .entry-thumbnail, .single .entry-content {
+  .single-post .content-area {
     grid-column: 2 / 2;
   }
-  .single .content-area {
-    grid-column: 2 / 2;
-  }
-  .single .entry-content {
-    display: flex;
-  }
-  .single .entry-content .project-tools {
-    grid-column: 1/1;
-  }
-  .single .entry-content figure {
-    grid-row: 5 / 5;
-  }
-  .single .content-area .site-main article .post-title {
+  .single-post .content-area .site-main article .post-title {
     margin-top: 72px;
     margin-right: 72px;
   }
-  .single .content-area h3, .single .content-area p, .single .content-area h4 {
+  .single-post .content-area h3, .single-post .content-area p, .single-post .content-area h4 {
     grid-column: 2 / 2;
   }
 }
 
 @media screen and (min-width: 1100px) {
-  .single .entry-thumbnail img {
+  .single-post .entry-thumbnail img {
     clip-path: polygon(0 0%, 100% 0%, 100% 90%, 0 100%);
     height: 450px;
   }
-  .single .content-area .site-main .category-design .entry-content h3 {
+  .single-post .content-area .site-main .category-design .entry-content h3 {
     padding: 4px 4px 4px 0;
   }
-  .single .content-area .site-main .category-design .entry-content .project-tools {
-    grid-row: 3 / 3;
-  }
-  .single .content-area .site-main article .entry-content {
-    display: grid;
-    grid-template-columns: auto auto;
+  .single-post .content-area .site-main article .entry-content {
+    display: flex;
+    flex-direction: column;
     background: #f8f4f1;
     color: #101010;
-    margin: 0px 72px;
-    margin-left: 0;
+    margin: 24px 72px;
     padding: 12px 0 0 0;
   }
-  .single .content-area .site-main article .entry-content ul.wp-block-social-links {
-    grid-row: 1 /1;
-    grid-column: 2 /2;
+  .single-post .content-area .site-main article .entry-content ul.wp-block-social-links {
     margin: 0;
     padding: 0;
     border: none;
   }
-  .single .content-area .site-main article .entry-content h3, .single .content-area .site-main article .entry-content p {
+  .single-post .content-area .site-main article .entry-content h3, .single-post .content-area .site-main article .entry-content p {
     margin: 0;
     padding: 12px 0 0 0;
   }
-  .single .content-area .site-main article .entry-content h3 {
-    grid-row: 1 /1;
-    padding: 4px;
-    padding-left: 40px;
-    grid-column: 2 / 2;
-  }
-  .single .content-area .site-main article .entry-content .project-tools {
+  .single-post .content-area .site-main article .entry-content .project-tools {
     padding: 0;
-    grid-column: 2 / 2;
   }
-  .single .content-area .site-main article .entry-content figure {
-    grid-column: 1 / 1;
-    grid-row: 1 / 5;
-    margin-right: 72px;
-  }
-  .single .content-area .site-main article .entry-content figure img {
+  .single-post .content-area .site-main article .entry-content figure img {
     clip-path: polygon(0 4%, 100% 0%, 100% 100%, 0 100%);
-    grid-row: 1 / 5;
     height: 350px;
   }
   .wp-block-social-links {
-    grid-row: 1 /1;
-    grid-column: 2 /2;
     margin: 0;
     padding: 0;
     border: none;
     z-index: 10;
   }
+}
+
+.category .content-area .site-main .category-title:nth-of-type(1) {
+  padding: 8px 36px 8px 36px;
 }
 
 .category .content-area .site-main article {
@@ -976,7 +943,6 @@ input#s:focus {
 
 .category .content-area .site-main article h3 a {
   color: #8b80f9;
-  padding-left: 36px;
   text-transform: uppercase;
 }
 
@@ -986,7 +952,7 @@ input#s:focus {
 
 .category .content-area .site-main article h3.post-title {
   order: 2;
-  margin: 12px 0 0 0;
+  margin: 12px 36px 0 36px;
   letter-spacing: 2px;
   color: #101010;
 }
@@ -1030,9 +996,9 @@ input#s:focus {
     margin: 0;
     grid-column: 1 / -1;
     text-align: right;
-    padding-right: 36px;
     color: #101010;
     margin-bottom: 36px;
+    padding: 8px 36px 8px 36px;
   }
   .category .content-area .site-main article {
     display: flex;
@@ -1041,11 +1007,11 @@ input#s:focus {
   }
   .category .content-area .site-main article h3 a {
     color: #8b80f9;
-    padding-left: 36px;
+    padding-left: 0px;
   }
   .category .content-area .site-main article h3.post-title {
     order: 2;
-    margin: 12px 36px 0 0;
+    margin: 12px 36px 0 36px;
     letter-spacing: 2px;
   }
   .category .content-area .site-main article .entry-content {
@@ -1099,6 +1065,7 @@ input#s:focus {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 11% 100%);
   }
   .category .content-area .site-main article:nth-of-type(2n) h3.post-title {
+    margin-left: 0;
     padding-left: 90px;
   }
   .category .content-area .site-main article:nth-of-type(2n) h3 a {
@@ -1118,6 +1085,10 @@ input#s:focus {
   }
 }
 
+.tag .content-area .site-main .tag-page-title:nth-of-type(1) {
+  padding: 8px 36px 8px 36px;
+}
+
 .tag .content-area .site-main article {
   display: flex;
   flex-direction: column;
@@ -1127,7 +1098,6 @@ input#s:focus {
 
 .tag .content-area .site-main article h3 a {
   color: #8b80f9;
-  padding-left: 36px;
   text-transform: uppercase;
 }
 
@@ -1137,7 +1107,7 @@ input#s:focus {
 
 .tag .content-area .site-main article h3.post-title {
   order: 2;
-  margin: 12px 0 0 0;
+  margin: 12px 36px 0 36px;
   letter-spacing: 2px;
 }
 
@@ -1197,7 +1167,6 @@ input#s:focus {
     margin: 0;
     grid-column: 1 / -1;
     text-align: right;
-    padding-right: 36px;
     margin-bottom: 36px;
   }
   .tag .content-area .site-main article {
@@ -1207,16 +1176,15 @@ input#s:focus {
   }
   .tag .content-area .site-main article h3 a {
     color: #8b80f9;
-    padding-left: 36px;
+    padding-left: 0px;
   }
   .tag .content-area .site-main article h3.post-title {
     order: 2;
-    margin: 12px 0 0 0;
+    margin: 12px 36px 0 36px;
     letter-spacing: 2px;
   }
   .tag .content-area .site-main article .entry-content {
     order: 3;
-    padding-left: 36px;
   }
   .tag .content-area .site-main article .entry-content .project-tags {
     margin: 4px 0 16px 0;
@@ -1248,6 +1216,7 @@ input#s:focus {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 11% 100%);
   }
   .tag .content-area .site-main article:nth-of-type(2n) h3.post-title {
+    margin-left: 0;
     padding-left: 90px;
   }
   .tag .content-area .site-main article:nth-of-type(2n) h3 a {
@@ -1394,6 +1363,16 @@ input#s:focus {
   }
 }
 
+.error404 .content-area .site-main {
+  margin: 36px;
+}
+
+@media screen and (min-width: 800px) {
+  .content-area {
+    grid-column: 2 / 2;
+  }
+}
+
 .home #primary #main {
   display: flex;
   flex-direction: column;
@@ -1418,9 +1397,8 @@ input#s:focus {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 90px;
   justify-content: center;
-  padding-bottom: 8px;
+  padding: 12px 0;
 }
 
 .home #primary #main .development-section article .project-details .project-tools, .home #primary #main .design-section article .project-details .project-tools {
@@ -1451,11 +1429,10 @@ input#s:focus {
 }
 
 .home #primary #main .development-section h3 {
-  padding-left: 36px;
   text-transform: uppercase;
-  padding-bottom: 12px;
   margin: 0;
   color: #8b80f9;
+  padding: 0 36px 12px 36px;
 }
 
 .home #primary #main .development-section .category-development .project-thumbnail a img {
@@ -1469,6 +1446,7 @@ input#s:focus {
   clip-path: polygon(0 0, 100% 3%, 100% 100%, 0 100%);
   margin-bottom: -24px;
   padding-bottom: 30px;
+  margin-top: 12px;
 }
 
 .home #primary #main .design-section h2 {
@@ -1479,12 +1457,11 @@ input#s:focus {
 }
 
 .home #primary #main .design-section h3 {
-  padding-right: 36px;
   text-transform: uppercase;
-  padding-bottom: 12px;
   margin: 0;
   color: #8b80f9;
   text-align: right;
+  padding: 0 36px 12px 36px;
 }
 
 .home #primary #main .design-section article .project-details .project-tools .post-meta li {
@@ -1523,9 +1500,6 @@ input#s:focus {
     color: #8b80f9;
     margin-top: 0;
   }
-  .home #primary #main .development-section article h3 a {
-    padding-right: 36px;
-  }
   .home #primary #main .development-section article .project-tools .post-meta li {
     color: #1f1f1f;
   }
@@ -1537,7 +1511,7 @@ input#s:focus {
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
-    height: 90px;
+    height: 100px;
     justify-content: center;
   }
   .home #primary #main .development-section article .project-details .project-tools, .home #primary #main .design-section article .project-details .project-tools {
@@ -1599,7 +1573,7 @@ input#s:focus {
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1100px) {
   .home {
     display: grid;
     grid-template-columns: 350px auto;
@@ -1668,6 +1642,7 @@ input#s:focus {
     padding-top: 36px;
     clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
     background: #f8f4f1;
+    margin-top: 0px;
   }
   .home #primary #main .design-section article:first-of-type {
     clip-path: polygon(0 0, 100% 0, 89% 100%, 0 100%);
@@ -1682,16 +1657,226 @@ input#s:focus {
     clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%);
   }
   .home #primary #main .design-section article:nth-of-type(2) .project-details h3 {
-    padding-left: 36px;
+    padding-left: 48px;
   }
   .home #primary #main .design-section article:nth-of-type(2) .project-details h4 {
-    padding-left: 36px;
+    padding-left: 48px;
   }
   .home #primary #main .development-section .category-development .project-thumbnail a img {
     clip-path: polygon(0 0%, 100% 0, 100% 100%, 0 100%);
   }
   .home #primary #main .design-section .category-design .project-thumbnail a img {
     clip-path: polygon(0 0%, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.single-portfolio_piece .entry-thumbnail img {
+  clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 93%);
+  height: 300px;
+  object-position: center;
+}
+
+.single-portfolio_piece .content-area .site-main article .post-title-single {
+  text-align: right;
+  margin-right: 36px;
+  margin-top: -10px;
+}
+
+.single-portfolio_piece .content-area .site-main article p strong a {
+  color: #8b80f9;
+}
+
+.single-portfolio_piece .content-area .site-main article .entry-content .wp-block-social-links {
+  grid-row: 1 /1;
+  grid-column: 1/1;
+  margin: 0;
+  padding: 0;
+  padding-left: 36px;
+  border: none;
+  padding-top: 12px;
+  z-index: 10;
+}
+
+.single-portfolio_piece .content-area .site-main article .entry-content {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto auto auto auto;
+  margin-top: -60px;
+  padding: 60px 0px 56px 0px;
+  background: #1f1f1f;
+  color: #f8f4f1;
+  margin-bottom: -30px;
+}
+
+.single-portfolio_piece .content-area .site-main article .entry-content p {
+  margin: 12px 36px auto 36px;
+}
+
+.single-portfolio_piece .content-area .site-main article .entry-content figure {
+  order: 5;
+}
+
+.single-portfolio_piece .content-area .site-main article .entry-content figure img {
+  clip-path: polygon(0 8%, 100% 0, 100% 93%, 0 100%);
+  grid-row: 4 / 4;
+}
+
+.single-portfolio_piece .content-area .site-main article .entry-content h3 {
+  margin: 12px 36px 8px 36px;
+  text-transform: lowercase;
+  color: #5cc1bc;
+  letter-spacing: 1px;
+  grid-row: 1/1;
+  grid-column: 1/1;
+  padding: 4px 0 4px 40px;
+}
+
+.single-portfolio_piece .content-area .site-main article .entry-content .project-tools {
+  padding: 12px 36px;
+}
+
+.single-portfolio_piece .content-area .site-main article .entry-content .project-tools div {
+  color: #8b80f9;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-bottom: 12px;
+}
+
+.single-portfolio_piece .content-area .site-main article .entry-content .project-tools ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.single-portfolio_piece .content-area .site-main article .entry-content .project-tools ul li {
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.single-portfolio_piece .content-area .site-main article .entry-content .project-tools ul li span {
+  display: none;
+}
+
+.single-portfolio_piece .wp-block-social-links .wp-social-link.wp-social-link.wp-social-link {
+  margin: 0;
+}
+
+.single-portfolio_piece .wp-block-social-links:not(.is-style-logos-only) .wp-social-link-github {
+  background-color: transparent;
+  color: #f8f4f1;
+}
+
+@media screen and (min-width: 1100px) {
+  .single-portfolio_piece .wp-block-social-links:not(.is-style-logos-only) .wp-social-link-github {
+    color: #101010;
+  }
+}
+
+.single-portfolio_piece .wp-block-social-links:not(.is-style-logos-only) .wp-social-link {
+  background-color: inherit;
+  color: inherit;
+}
+
+.single-portfolio_piece article .entry-content ul.wp-block-social-links {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.single-portfolio_piece .content-area .site-main .category-design .entry-content h3 {
+  padding: 4px 0;
+}
+
+@media screen and (min-width: 800px) {
+  .single-portfolio_piece {
+    display: grid;
+    grid-template-columns: 350px auto;
+  }
+  .single-portfolio_piece .content-area .site-main .category-design .entry-content p {
+    grid-column: 1 / 1;
+  }
+  .single-portfolio_piece .content-area, .single-portfolio_piece .entry-thumbnail, .single-portfolio_piece .entry-content {
+    grid-column: 2 / 2;
+  }
+  .single-portfolio_piece .content-area {
+    grid-column: 2 / 2;
+  }
+  .single-portfolio_piece .content-area .site-main article .entry-content {
+    background: #101010;
+  }
+  .single-portfolio_piece .content-area .site-main article .entry-content .project-tools {
+    grid-column: 1/1;
+  }
+  .single-portfolio_piece .content-area .site-main article .entry-content figure {
+    grid-row: 5 / 5;
+  }
+  .single-portfolio_piece .content-area .site-main article .post-title {
+    margin-top: 72px;
+    margin-right: 72px;
+  }
+  .single-portfolio_piece .content-area h3, .single-portfolio_piece .content-area p, .single-portfolio_piece .content-area h4 {
+    grid-column: 2 / 2;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .single-portfolio_piece .entry-thumbnail img {
+    clip-path: polygon(0 0%, 100% 0%, 100% 90%, 0 100%);
+    height: 450px;
+  }
+  .single-portfolio_piece .content-area .site-main .category-design .entry-content h3 {
+    padding: 4px 4px 4px 0;
+  }
+  .single-portfolio_piece .content-area .site-main .category-design .entry-content .project-tools {
+    grid-row: 3 / 3;
+  }
+  .single-portfolio_piece .content-area .site-main article .entry-content {
+    display: grid;
+    grid-template-columns: auto auto;
+    background: #f8f4f1;
+    color: #101010;
+    margin: 0px 72px;
+    margin-left: 0;
+    padding: 12px 0 0 0;
+  }
+  .single-portfolio_piece .content-area .site-main article .entry-content ul.wp-block-social-links {
+    grid-row: 1 /1;
+    grid-column: 2 /2;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  .single-portfolio_piece .content-area .site-main article .entry-content h3, .single-portfolio_piece .content-area .site-main article .entry-content p {
+    margin: 0;
+    padding: 12px 0 0 0;
+  }
+  .single-portfolio_piece .content-area .site-main article .entry-content h3 {
+    grid-row: 1 /1;
+    padding: 4px;
+    padding-left: 40px;
+    grid-column: 2 / 2;
+  }
+  .single-portfolio_piece .content-area .site-main article .entry-content .project-tools {
+    padding: 0;
+    grid-column: 2 / 2;
+  }
+  .single-portfolio_piece .content-area .site-main article .entry-content figure {
+    grid-column: 1 / 1;
+    grid-row: 1 / 5;
+    margin-right: 72px;
+  }
+  .single-portfolio_piece .content-area .site-main article .entry-content figure img {
+    clip-path: polygon(0 4%, 100% 0%, 100% 100%, 0 100%);
+    grid-row: 1 / 5;
+    height: 350px;
+  }
+  .wp-block-social-links {
+    grid-row: 1 /1;
+    grid-column: 2 /2;
+    margin: 0;
+    padding: 0;
+    border: none;
+    z-index: 10;
   }
 }
 /*# sourceMappingURL=style.css.map */

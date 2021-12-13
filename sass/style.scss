@@ -4,7 +4,7 @@ Author: Olivia Underdah
 Description: Custom Post Type Custom Fields Custom Logo 
 Version: 1.0
 License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: starthere
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -26,6 +26,7 @@ Table of Contents
 11. search
 12. error
 13. front-page
+14. portfolio_piece
 
 */
 
@@ -67,3 +68,6 @@ Table of Contents
 
 // 13. front-page
         @import 'partials/_front_page';
+
+// 13. portfolio_piece_posts
+        @import 'partials/_portfolio_piece';
