@@ -19,6 +19,7 @@ endif;
  
 add_action('after_setup_theme', 'portfolioOU_setup');
 
+// Create Custom Search Display with Icon
 function custom_search_form( $form ) {
    $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
      <div class="custom-search-form"><label class="screen-reader-text" for="s">' . __( 'Search:' ) . '</label>
@@ -31,8 +32,9 @@ function custom_search_form( $form ) {
  }
  
  add_filter( 'get_search_form', 'custom_search_form', 100 );
- 
 
+
+// Add custom logo upload option
 function portfolioOU_custom_logo_setup() {
    $defaults = array(
        'height'               => 400,
@@ -47,7 +49,21 @@ function portfolioOU_custom_logo_setup() {
 }
 
 add_action( 'after_setup_theme', 'portfolioOU_custom_logo_setup' );
+
+add_filter('pre_get_posts', 'query_post_type');
+function query_post_type($query) {
+  if( is_category() ) {
+    $post_type = get_query_var('post_type');
+    if($post_type)
+        $post_type = $post_type;
+    else
+        $post_type = array('nav_menu_item', 'post', 'portfolio_piece');
+    $query->set('post_type',$post_type);
+    return $query;
+    }
+}
  
+// Enqueue scripts - font, jquery, font-awesome, style sheet //
 function portfolioOU_scripts_styles(){
    wp_enqueue_style('portfolioOU_style', get_stylesheet_uri(), array(), time());
    wp_enqueue_style('portfolioOU_style_googlefonts', 'https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap', array(), null);
@@ -60,5 +76,5 @@ function portfolioOU_scripts_styles(){
 }
 
 remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
- 
+
 add_action('wp_enqueue_scripts', 'portfolioOU_scripts_styles');
