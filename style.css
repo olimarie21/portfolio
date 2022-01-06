@@ -1,7 +1,7 @@
 /*
 Theme Name: Custom Portfolio - OU
 Author: Olivia Underdah
-Description: Custom Post Type Custom Fields Custom Logo 
+Description: Olivia Underdah Custom Portfolio Site
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -1649,9 +1649,11 @@ input#s:focus {
   }
   .home #primary #main .design-section article:first-of-type .project-details h3 {
     padding-left: 36px;
+    padding-right: 72px;
   }
   .home #primary #main .design-section article:first-of-type .project-details h4 {
     padding-left: 36px;
+    padding-right: 72px;
   }
   .home #primary #main .design-section article:nth-of-type(2) {
     clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%);

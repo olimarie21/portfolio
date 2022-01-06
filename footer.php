@@ -1,5 +1,5 @@
 <?php ?>
-</main> <!-- .site-main -->
+</main> <!-- site main -->
 
 
 <footer class="site-footer" id="site-footer">
