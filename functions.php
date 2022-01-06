@@ -37,8 +37,8 @@ function custom_search_form( $form ) {
 // Add custom logo upload option
 function portfolioOU_custom_logo_setup() {
    $defaults = array(
-       'height'               => 400,
-       'width'                => 400,
+       'height'               => 300,
+       'width'                => 300,
        'flex-height'          => true,
        'flex-width'           => true,
        'header-text'          => array( 'site-title', 'site-description' ),
@@ -50,9 +50,10 @@ function portfolioOU_custom_logo_setup() {
 
 add_action( 'after_setup_theme', 'portfolioOU_custom_logo_setup' );
 
+// allow for custom post type to display on category pages
 add_filter('pre_get_posts', 'query_post_type');
 function query_post_type($query) {
-  if( is_category() ) {
+  if( is_category() || is_tag() ) {
     $post_type = get_query_var('post_type');
     if($post_type)
         $post_type = $post_type;
