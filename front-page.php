@@ -11,11 +11,10 @@ get_header();
 <!-- Dev Query -->
 <?php
 $development_query = new WP_Query(
-  array(
     'post_type'       =>  'portfolio_piece',
-    'category_name'   =>  'development',
+    'category_name'   =>  'dev_feature',
     'posts_per_page'  =>  '2',
-    'orderby'         =>  'rand'
+    'order'           =>  'asc'
   )
 );
 
